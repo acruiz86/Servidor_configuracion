@@ -30,5 +30,6 @@ public class Moto {
 
     public void setAnno(int anno) {
         this.anno = anno;
+        
     }
 }
