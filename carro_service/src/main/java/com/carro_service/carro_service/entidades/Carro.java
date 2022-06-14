@@ -12,7 +12,11 @@ public class Carro {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String marca;
+    private String serie;
+    private int anno;
     private int usuarioId;
+    public Carro() {
+    }
     public void setUsuarioId(int usuarioId) {
         this.usuarioId = usuarioId;
     }
@@ -43,7 +47,6 @@ public class Carro {
     public void setAnno(int anno) {
         this.anno = anno;
     }
-    private String serie;
-    private int anno;
+    
     
 }

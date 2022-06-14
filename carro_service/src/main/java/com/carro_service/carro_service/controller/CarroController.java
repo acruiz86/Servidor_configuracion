@@ -32,9 +32,10 @@ public class  CarroController {
     @PostMapping
     public ResponseEntity<Carro> GuardarCarro(@RequestBody Carro carro)
     {
+        int idsss=carro.getUsuarioId();
+        System.out.println(Integer.toString(idsss));
         Carro insertado=carroservice.GuardarCarro(carro);
         return ResponseEntity.ok(insertado);
-
     }
     @GetMapping("/{id}")
     public ResponseEntity<Carro> ObtenerCarroId(@PathVariable("id") int id)

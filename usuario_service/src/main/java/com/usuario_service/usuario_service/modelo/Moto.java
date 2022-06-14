@@ -4,6 +4,15 @@ public class Moto {
     private String marca;
     private String clase;
     private int anno;
+    private int usuarioID;
+
+    public int getUsuarioID() {
+        return usuarioID;
+    }
+
+    public void setUsuarioID(int usuarioID) {
+        this.usuarioID = usuarioID;
+    }
 
     public Moto() {
     }

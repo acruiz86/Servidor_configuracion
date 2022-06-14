@@ -1,8 +1,12 @@
 package com.usuario_service.usuario_service.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import com.usuario_service.usuario_service.servicios.*;
+
+import ch.qos.logback.core.encoder.EchoEncoder;
+
 import com.usuario_service.usuario_service.entidades.Usuario;
 import com.usuario_service.usuario_service.modelo.Carro;
 import com.usuario_service.usuario_service.modelo.Moto;
@@ -47,10 +51,10 @@ public class UsuarioController {
     }
 
     @GetMapping("/carro/{usuarioid}")
-    public ResponseEntity<List<Carro>> CarrosUsuario(@PathVariable("usuarioid") int id) {
-        List<Carro> fined = usuarioservice.getCarros(id);
-        if (fined == null) {
-            return ResponseEntity.notFound().build();
+    public ResponseEntity<List<Carro>> CarrosUsuario(@PathVariable("usuarioid") int usuarioid) {
+        List<Carro> fined = usuarioservice.getCarros(usuarioid);
+        if (fined.isEmpty() || fined==null ) {
+            return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(fined);
     }
@@ -58,10 +62,31 @@ public class UsuarioController {
     @GetMapping("/moto/{usuarioid}")
     public ResponseEntity<List<Moto>> MotosUsuario(@PathVariable("usuarioid") int id) {
         List<Moto> fined = usuarioservice.getMotos(id);
-        if (fined == null) {
-            return ResponseEntity.notFound().build();
+        if (fined.isEmpty()) {
+            return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(fined);
     }
+    
+    @PostMapping("/carro/{usuarioID}")
+    public ResponseEntity<Carro> GuardarCarroContrll(@PathVariable("usuarioID") int usuarioID, @RequestBody Carro carro){
+        Carro saved=usuarioservice.GuardarCarro(usuarioID, carro);
+        return ResponseEntity.ok(saved);
 
+    }
+    @GetMapping("/carro/listar")
+   public ResponseEntity<List<Carro>> TodosCarrosfeng(){
+    List<Carro> carrossss=usuarioservice.FeignGetCarros();
+    if (carrossss.isEmpty()) {
+        return ResponseEntity.noContent().build();
+        
+    }
+    return ResponseEntity.ok(carrossss);
+   }
+   @GetMapping("/todos/{usuarioID}")
+   public ResponseEntity<Map<String,Object>> TodosLosVehiculos(@PathVariable("usuarioID") int usuarioID){
+    Map<String,Object> res= usuarioservice.TodosLosVehiculos(usuarioID);
+    return ResponseEntity.ok(res);
+
+   }
 }
