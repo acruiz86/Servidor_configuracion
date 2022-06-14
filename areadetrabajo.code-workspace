@@ -1,0 +1,29 @@
+{
+	"folders": [
+		{
+			"path": "usuario_service"
+		},
+		{
+			"name": "carro_service",
+			"path": "carro_service"
+		},
+		{
+			"name": "moto_service",
+			"path": "moto_service"
+		},
+		{
+			"name": "feigncliente",
+			"path": "feigncliente"
+		},
+		{
+			"name": "config_server",
+			"path": "config_server"
+		},
+		{
+			"path": "config_data"
+		}
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "disabled"
+	}
+}
