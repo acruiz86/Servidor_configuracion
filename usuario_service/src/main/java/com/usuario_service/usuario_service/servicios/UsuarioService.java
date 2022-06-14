@@ -75,7 +75,7 @@ public class  UsuarioService {
           return nuevousuario;
      }
      public Map<String,Object> CarrosYMotosUsuario(int idusuario){
-        Usuario encontrar=usuariorepositorio.findById(idusuario);
+        Usuario encontrar=usuariorepositorio.findById(idusuario).orElse(null);
         Map<String,Object> resultados=new HashMap<>();
         if (encontrar!=null) {       
         List<Carro> carrosDeUsuario=this.getCarros(idusuario);
