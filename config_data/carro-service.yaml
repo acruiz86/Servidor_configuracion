@@ -1,4 +1,4 @@
 server:
   port: 8082
-  application-name: carro_service
+  application-name: carro-service
 
