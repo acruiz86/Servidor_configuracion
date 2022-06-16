@@ -1,6 +1,6 @@
 server:
   port: 8082
-  application-name: moto_service
+  application-name: carro_service
 eureka:
   client:
     fetch-registry:  true
