@@ -3,10 +3,9 @@ server:
   application-name: carro-service
 eureka:
   client:
-    fetch-registry:  false
-    register-whith-eureka:  false
+    fetch-registry:  true
+    register-whith-eureka:  true
     service-url:
       default-zone:  http://localhost:8761/eureka
     instance:
       hostname:  localhost
-
