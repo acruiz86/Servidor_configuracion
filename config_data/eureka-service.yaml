@@ -1,3 +1,6 @@
 server:
-  port: 8084
-  application-name: eureka_service
+  port: 8761
+eureka:
+  client:
+    fetch-registry:  false
+    register-whith-eureka:  false
