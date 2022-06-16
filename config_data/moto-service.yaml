@@ -1,3 +1,7 @@
 server:
   port: 8083
   application-name: moto_service
+eureka:
+  client:
+    fetch-registry:  true
+    register-whith-eureka:  true
