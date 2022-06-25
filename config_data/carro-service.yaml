@@ -1,10 +1,9 @@
 server:
   port: ${PORT:${SERVER_PORT:0}}
-  application-name: carro_service
 eureka:
   client:
     fetch-registry:  true
-    register-whith-eureka:  true
+    register-with-eureka:  true
     service-url:
       default-zone:  http://localhost:8761/eureka
     instance:
