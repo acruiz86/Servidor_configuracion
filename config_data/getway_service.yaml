@@ -1,5 +1,5 @@
 server:
-  port: ${PORT:${SERVER_PORT:8087}}
+  port: 8080
   application-name: getway-service
 eureka:
   client:
@@ -8,4 +8,24 @@ eureka:
     service-url:
       default-zone:  http://localhost:8761/eureka
     instance:
-       instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+       hostname: localhost
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enable: true
+      routes:
+      - id: usuario-service
+        uri: lb://usuario-service
+        predicates:
+          - Path=/usuario/**
+      - id: carro-service
+        uri: lb://carro-service
+        predicates:
+          - Path=/carro/**
+      - id: moto-service
+        uri: lb://moto-service
+        predicates:
+          - Path=/moto/**
+      
