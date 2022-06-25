@@ -1,6 +1,6 @@
 server:
   port: ${PORT:${SERVER_PORT:8087}}
-  application-name: usuario-service
+  application-name: getway-service
 eureka:
   client:
     fetch-registry:  true
