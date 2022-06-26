@@ -1,6 +1,6 @@
 server:
   port: 8080
-  application-name: getway-service
+  application-name: gateway-service
 eureka:
   client:
     fetch-registry:  true
@@ -16,16 +16,16 @@ spring:
         locator:
           enable: true
       routes:
-      - id: usuario-service
+      - id: usuario_service
         uri: lb://usuario_service
         predicates:
           - Path=/usuario/**
       - id: carro_service
-        uri: lb://carro-service
+        uri: lb://carro_service
         predicates:
           - Path=/carro/**
       - id: moto_service
-        uri: lb://moto-service
+        uri: lb://moto_service
         predicates:
           - Path=/moto/**
       
