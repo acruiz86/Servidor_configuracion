@@ -10,7 +10,7 @@ eureka:
     instance:
        instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
   instance:
-    statusPageUrl: https://${eureka.hostname}:${spring.application.port}/usuario/
+    statusPageUrl: https://${eureka.hostname}:${server.port}/usuario/
     healthCheckUrl: https://${eureka.hostname}:${spring.application.port}/usuario/
     homePageUrl: https://${eureka.hostname}:${spring.application.port}/
 
