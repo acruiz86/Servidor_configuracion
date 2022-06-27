@@ -2,10 +2,6 @@ server:
   port: ${PORT:${SERVER_PORT:0}}
   application-name: usuario-service
 eureka:
-  instance:
-    statusPageUrl: https://${eureka.hostname}/rrr
-    healthCheckUrl: https://${eureka.hostname}/rrr
-    homePageUrl: https://${eureka.hostname}/
   client:
     fetch-registry:  true
     register-whith-eureka:  true
@@ -13,5 +9,9 @@ eureka:
       default-zone:  http://localhost:8761/eureka
     instance:
        instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  instance:
+    statusPageUrl: https://${eureka.hostname}:${spring.application.port}/usuario/
+    healthCheckUrl: https://${eureka.hostname}:${spring.application.port}/usuario/
+    homePageUrl: https://${eureka.hostname}:${spring.application.port}/
 
        
