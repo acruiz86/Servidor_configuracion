@@ -9,6 +9,5 @@ eureka:
       default-zone:  http://localhost:8761/eureka
     instance:
        instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-       statusPageUrl: http://${spring.application.name}:${spring.application.port}/usuario/
-       statusPageUrlPath: /usuario/
+
        
