@@ -2,6 +2,9 @@ server:
   port: ${PORT:${SERVER_PORT:0}}
   application-name: usuario-service
 eureka:
+  instance:
+    statusPageUrlPath: ${server.servletPath}/info
+    healthCheckUrlPath: ${server.servletPath}/health
   client:
     fetch-registry:  true
     register-whith-eureka:  true
