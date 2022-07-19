@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: 8084
   application-name: usuario-service
 eureka:
   client:
